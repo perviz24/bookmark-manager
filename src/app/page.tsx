@@ -5,6 +5,7 @@ import { SignInButton, UserButton } from "@clerk/nextjs";
 import { Bookmark, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
+import { AddBookmarkForm } from "@/components/add-bookmark-form";
 
 export default function Home() {
   return (
@@ -59,8 +60,16 @@ export default function Home() {
         </Unauthenticated>
 
         <Authenticated>
-          <div className="text-center py-20 text-muted-foreground">
-            Dashboard coming next...
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight">
+                Your Bookmarks
+              </h1>
+              <p className="text-muted-foreground mt-1">
+                Save and organize your favorite links
+              </p>
+            </div>
+            <AddBookmarkForm />
           </div>
         </Authenticated>
       </main>
